@@ -46,3 +46,19 @@ kits.getId = function () {
   let id = time + '' + r;
   return id;
 }
+// rgb 颜色随机
+kits.random = function () {
+  let r = Math.floor(Math.random) * 256
+  let g = Math.floor(Math.random) * 256
+  let b = Math.floor(Math.random) * 256
+  return 'rgb(' + r + ',' + g + ',' + b + ')';
+}
+//十六进制颜色随机
+kits.random16 = function () {
+  var r = Math.floor(Math.random() * 256);
+  var g = Math.floor(Math.random() * 256);
+  var b = Math.floor(Math.random() * 256);
+  var color = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+  return color;
+
+}
