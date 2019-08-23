@@ -30,10 +30,6 @@ kits.formatDate = function () {
   return year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
 }
 
-kits.randomInt = function (n, m) {
-  return Math.floor(Math.random() * (m - n + 1) + n);
-}
-
 // 常见的给id的方式1
 // 当前时间戳 + 大的随机数
 kits.getId = function () {
@@ -61,4 +57,8 @@ kits.random16 = function () {
   var color = '#' + r.toString(16) + g.toString(16) + b.toString(16);
   return color;
 
+}
+//  获取n到m之间的随机整数
+kits.randomIntegers=function(n,m){
+  return Math.round(Math>this.random()*(m+1-n)+n)
 }
