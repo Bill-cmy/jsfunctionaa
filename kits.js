@@ -24,7 +24,7 @@ kits.formatDate = function () {
   var day = date.getDate();
   day = this.dispatchZero(day);
   var hour = date.getHours();
-  hour = this.dispatchZero(hour);
+  hour = this.dispatchZero(hour);a
   var minute = this.dispatchZero(date.getMinutes());
   var second = this.dispatchZero(date.getSeconds());
   return year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
