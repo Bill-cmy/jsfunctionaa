@@ -24,7 +24,7 @@ kits.formatDate = function () {
   var day = date.getDate();
   day = this.dispatchZero(day);
   var hour = date.getHours();
-  hour = this.dispatchZero(hour);a
+  hour = this.dispatchZero(hour); a
   var minute = this.dispatchZero(date.getMinutes());
   var second = this.dispatchZero(date.getSeconds());
   return year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
@@ -59,6 +59,20 @@ kits.random16 = function () {
 
 }
 //  获取n到m之间的随机整数
-kits.randomIntegers=function(n,m){
-  return Math.round(Math>this.random()*(m+1-n)+n)
+kits.randomIntegers = function (n, m) {
+  return Math.round(Math > this.random() * (m + 1 - n) + n)
+}
+// 根据指定的键获取一个数组
+kits.getLocalDataArray = function (key) {
+  let date = localStorage.getItem(key);  /*  getItem  取出字符串 */
+  let arr = JSON.parse(date);   /*parse  转换成数组 */
+  if (!arr) {
+    arr = [];
+  }
+  return arr;
+}
+// 将一个数组以指定的键存到localStorage里面
+kits.saveLocalDataArray = function (arr) {
+  return localStorage.setItem(key, JSON.stringify(arr)); /* stringify 转换成JSON模式 */
+
 }
