@@ -72,7 +72,30 @@ kits.getLocalDataArray = function (key) {
   return arr;
 }
 // 将一个数组以指定的键存到localStorage里面
-kits.saveLocalDataArray = function (arr) {
-  return localStorage.setItem(key, JSON.stringify(arr)); /* stringify 转换成JSON模式 */
+kits.saveLocalDataArray = function (key, arr) {
+  localStorage.setItem(key, JSON.stringify(arr)); /* stringify 转换成JSON模式 */
+
+}
+// 根据对应的id从localStorage中指定键(key)的数组中删除一条数据
+kits.deleteLocalDataById = function (key, id) {
+  let keys = this.getLocalDataArray(key);
+  keys.forEach((e, i) => {
+    if (e.id == id) {
+
+      keys.splice(i, 1);
+    }
+  })
+  kits.saveLocalDataArray('key', id)
+}
+// 根据id 修改本地数据
+kits.modifyLocalDataById = function (key, id, data) {
+  let datas = this.getLocalDataArray(key);
+  datas.forEach((e, i) => {
+    if (e.id == id) {
+      // 重新赋值一个数据 把旧的数据给覆盖了
+      datas[i] = data;
+    }
+  });
+  kits.saveLocalDataArray('key', datas);
 
 }
